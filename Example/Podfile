@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'RSSwiftNetworking_Example' do
+  pod 'RSSwiftNetworking/AlamofireProvider', :path => '../'
+end
