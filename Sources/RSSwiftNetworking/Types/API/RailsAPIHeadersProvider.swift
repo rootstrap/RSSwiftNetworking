@@ -23,7 +23,7 @@ open class RailsAPIHeadersProvider: HeadersProvider {
     contentTypeHeaders.merging(sessionProvider.headers) { current, _ in current }
   }
 
-  init(sessionProvider: SessionProvider) {
+  public init(sessionProvider: SessionProvider) {
     self.sessionProvider = sessionProvider
   }
 

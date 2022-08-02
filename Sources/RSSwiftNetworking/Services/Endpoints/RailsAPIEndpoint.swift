@@ -1,11 +1,11 @@
 import Foundation
 
-internal protocol RailsAPIEndpoint: Endpoint {
+public protocol RailsAPIEndpoint: Endpoint {
   var baseURL: String { get }
   var path: String { get }
 }
 
-extension RailsAPIEndpoint {
+public extension RailsAPIEndpoint {
   var baseURL: String {
     Bundle.main.object(forInfoDictionaryKey: "Base URL") as? String ?? ""
   }

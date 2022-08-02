@@ -22,6 +22,7 @@ public protocol APIClient {
 
   /// Performs the request by using the provided `NetworkProvider`.
   /// - Returns: A `Cancellable` request.
+  @discardableResult
   func request<T: Decodable>(
     endpoint: Endpoint,
     completion: @escaping CompletionCallback<T>
@@ -31,6 +32,7 @@ public protocol APIClient {
   /// The endpoint parameters will be encoded in the multipart form.
   /// Note: Multipart requests do not support `Content-Type = application/json` headers.
   /// If your API requires this header user base64 uploads instead.
+  @discardableResult
   func multipartRequest<T: Decodable>(
     endpoint: Endpoint,
     paramsRootKey: String,

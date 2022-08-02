@@ -5,6 +5,8 @@ import Alamofire
 /// This should be the only place where the `Alamofire` dependency is imported
 public final class AlamofireNetworkProvider: NetworkProvider {
 
+  public init() {}
+
   public func request(
     endpoint: Endpoint,
     completion: @escaping (Result<Network.Response, Error>) -> Void
