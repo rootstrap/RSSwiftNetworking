@@ -31,4 +31,8 @@ public struct APIEndpoint: Endpoint {
     endpoint.decodingConfiguration
   }
 
+  public var parameterEncoding: ParameterEncoding {
+      endpoint.parameterEncoding
+  }
+
 }

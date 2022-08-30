@@ -8,11 +8,11 @@ public typealias CompletionCallback<T: Decodable> = (
 /// Defines the requirement for an API Client object
 public protocol APIClient {
 
-  /// Returns the base encoding configration for all requests parameters.
+  /// Returns the base encoding configuration for all requests parameters.
   /// Will be overriden by the `Endpoint` encoding configuration, if any.
   var encodingConfiguration: EncodingConfiguration { get }
 
-  /// Returns the base decoding configration for all request reponses.
+  /// Returns the base decoding configuration for all request reponses.
   /// Will be overriden by the `Endpoint` decoding configuration, if any.
   var decodingConfiguration: DecodingConfiguration { get }
 
