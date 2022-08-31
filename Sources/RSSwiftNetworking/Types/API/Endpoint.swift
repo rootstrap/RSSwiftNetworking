@@ -13,6 +13,7 @@ public protocol Endpoint {
   var headers: [String: String] { get }
   var parameters: [String: Any] { get }
   var decodingConfiguration: DecodingConfiguration? { get }
+  var parameterEncoding: ParameterEncoding { get }
 
 }
 
@@ -30,6 +31,15 @@ public extension Endpoint {
 
   var headers: [String: String] {
     [:]
+  }
+
+  var parameterEncoding: ParameterEncoding {
+    switch method {
+    case .patch, .put, .post:
+        return .httpBody(.json)
+    default:
+      return .urlQuery
+    }
   }
 
 }

@@ -17,6 +17,7 @@ public final class AlamofireNetworkProvider: NetworkProvider {
       endpoint.requestURL,
       method: endpoint.method.alamofireMethod,
       parameters: endpoint.parameters,
+      encoding: endpoint.parameterEncoding.alamofireEncoding,
       headers: headers
     )
     .validate()
@@ -146,4 +147,18 @@ fileprivate extension MultipartMedia {
   func embed(inForm multipart: MultipartFormData) {
     multipart.append(data, withName: key, fileName: toFile, mimeType: type.rawValue)
   }
+}
+
+fileprivate extension RSSwiftNetworking.ParameterEncoding {
+    var alamofireEncoding: Alamofire.ParameterEncoding {
+        switch self {
+        case .httpBody(let format):
+            if format == .json {
+                return JSONEncoding.default
+            }
+            return URLEncoding(destination: .httpBody)
+        case .urlQuery:
+            return URLEncoding(destination: .queryString)
+        }
+    }
 }
