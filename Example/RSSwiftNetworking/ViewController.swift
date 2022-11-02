@@ -68,10 +68,11 @@ class ViewController: UIViewController {
     makeRequestButton.isEnabled = false
     let apiClient = BaseAPIClient.alamofire
     let mockEndpoint = MockJSONAPIEndpoint(url: url)
-    apiClient.request(endpoint: mockEndpoint) { [weak self] (result: Result<Network.EmptyResponse?, Error>, responseHeaders) in
-      self?.makeRequestButton.isEnabled = true
 
-      switch result {
+    Task { [weak self] in
+      let response: RequestResponse<Network.EmptyResponse?> = await apiClient.request(endpoint: mockEndpoint)
+
+      switch response.result {
       case .success:
         self?.showAlertMessage(success: true)
       case .failure(let error):

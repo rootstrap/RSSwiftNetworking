@@ -1,18 +1,17 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
   name: "RSSwiftNetworking",
-  platforms: [.iOS(.v12), .tvOS(.v10), .macOS(.v11)],
+  platforms: [.iOS(.v13), .tvOS(.v15), .macOS(.v12)],
   products: [
     .library(name: "RSSwiftNetworking", targets: ["RSSwiftNetworking"]),
     .library(name: "RSSwiftNetworkingAlamofire", targets: ["RSSwiftNetworkingAlamofire", "RSSwiftNetworking"])
   ],
   dependencies: [
     .package(
-        name: "Alamofire",
         url: "https://github.com/Alamofire/Alamofire.git",
         from: "5.2.0"
     ),

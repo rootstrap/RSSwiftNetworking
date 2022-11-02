@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RSSwiftNetworking'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'A flexible network layer API written in Swift.'
 
   s.description      = 'A flexible network layer API written in Swift. Compatible with iOS, iPadOS and tvOS.'
@@ -13,11 +13,11 @@ Pod::Spec.new do |s|
                        }
   s.social_media_url = 'https://www.rootstrap.com/'
   
-  s.ios.deployment_target = '14.0'
-  s.osx.deployment_target = '11.0'
-  s.tvos.deployment_target = '10.0'
+  s.ios.deployment_target = '15.0'
+  s.osx.deployment_target = '12.0'
+  s.tvos.deployment_target = '15.0'
 
-  s.swift_version = '5.2'
+  s.swift_version = '5.5'
 
   s.default_subspec = 'Core'
   s.subspec 'Core' do |core_spec|
