@@ -79,6 +79,8 @@ class ViewController: UIViewController {
         self?.showAlertMessage(success: false)
         print("OOPS! \(error)")
       }
+
+      self?.makeRequestButton.isEnabled = true
     }
   }
 

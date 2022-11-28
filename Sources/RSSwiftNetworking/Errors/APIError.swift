@@ -67,7 +67,7 @@ public struct RailsError: Decodable {
       self.error = error
       self.errors = nil
     } else {
-      error = try? values.decode(String.self, forKey: .error)
+      error = try values.decode(String.self, forKey: .error)
       errors = nil
     }
   }
