@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RSSwiftNetworking'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'A flexible network layer API written in Swift.'
 
   s.description      = 'A flexible network layer API written in Swift. Compatible with iOS, iPadOS and tvOS.'
