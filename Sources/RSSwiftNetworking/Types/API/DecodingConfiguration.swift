@@ -9,7 +9,7 @@ public struct DecodingConfiguration {
   let keyStrategy: JSONDecoder.KeyDecodingStrategy
   let dataStrategy: JSONDecoder.DataDecodingStrategy
   
-  init(
+  public init(
     dateStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
     keyStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
     dataStrategy: JSONDecoder.DataDecodingStrategy = .base64
