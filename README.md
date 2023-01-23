@@ -16,7 +16,7 @@
 
 ```ruby
 
-pod 'RSSwiftNetworking', '~> 1.1.3'
+pod 'RSSwiftNetworking', '~> 1.1.4'
 
 ```
 
