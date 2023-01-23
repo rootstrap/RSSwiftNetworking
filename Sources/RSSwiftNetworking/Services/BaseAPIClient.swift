@@ -44,6 +44,22 @@ public final class BaseAPIClient: APIClient {
       self.handle(result, for: endpoint, completion: completion)
     }
   }
+  
+  @discardableResult
+    public func requestData(
+      endpoint: Endpoint,
+      completion: @escaping (Result<Data, Error>) -> Void
+    ) -> Cancellable {
+      networkProvider.request(
+        endpoint: buildAPIEndpoint(from: endpoint)
+      ) { result in
+        if case .success(let response) = result {
+          if let data = response.data {
+            completion(.success(data))
+          }
+        }
+      }
+    }
 
   @discardableResult
   public func multipartRequest<T: Decodable>(

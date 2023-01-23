@@ -16,7 +16,7 @@ public enum Network {
 
   /// Meaningful HTTP status codes for the API.
   public enum StatusCode {
-    static let unauthorized = 401
+    public static let unauthorized = 401
   }
 
   /// Represents an APIClient response

@@ -5,9 +5,9 @@ public struct DecodingConfiguration {
   
   public static let `default` = DecodingConfiguration()
   
-  let dateStrategy: JSONDecoder.DateDecodingStrategy
-  let keyStrategy: JSONDecoder.KeyDecodingStrategy
-  let dataStrategy: JSONDecoder.DataDecodingStrategy
+  public let dateStrategy: JSONDecoder.DateDecodingStrategy
+  public let keyStrategy: JSONDecoder.KeyDecodingStrategy
+  public let dataStrategy: JSONDecoder.DataDecodingStrategy
   
   public init(
     dateStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
