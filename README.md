@@ -26,7 +26,7 @@ pod 'RSSwiftNetworking', '~> 1.1.4'
 Add the following line to your `Cartfile` and follow the [installation instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application).
 
 ```
-github "rootstrap/RSSwiftNetworking" ~> 1.1.3
+github "rootstrap/RSSwiftNetworking" ~> 1.1.4
 ```
 
 #### 3. Swift Package Manager
