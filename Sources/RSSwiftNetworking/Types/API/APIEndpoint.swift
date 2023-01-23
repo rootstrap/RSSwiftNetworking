@@ -5,7 +5,7 @@ public struct APIEndpoint: Endpoint {
   private let headersProvider: HeadersProvider
   private let endpoint: Endpoint
 
-  init(endpoint: Endpoint, headersProvider: HeadersProvider) {
+  public init(endpoint: Endpoint, headersProvider: HeadersProvider) {
     self.endpoint = endpoint
     self.headersProvider = headersProvider
   }
