@@ -14,7 +14,7 @@ public struct APIEndpoint: Endpoint {
     endpoint.requestURL
   }
 
-    public var method: Network.HTTPMethod {
+  public var method: Network.HTTPMethod {
     endpoint.method
   }
 
