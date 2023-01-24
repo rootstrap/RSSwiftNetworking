@@ -16,7 +16,7 @@ public enum Network {
 
   /// Meaningful HTTP status codes for the API.
   public enum StatusCode {
-    static let unauthorized = 401
+    public static let unauthorized = 401
   }
 
   /// Represents an APIClient response
@@ -48,11 +48,11 @@ public enum Network {
 
   /// Defines the Content Types to be used in HTTP requests
   public enum ContentType {
-    static let plainText = "text/plain"
-    static let applicationURLForm = "application/x-www-form-urlencoded"
-    static let applicationJSON = "application/json"
-    static let applicationXML = "application/xml"
-    static let multipartForm = "multipart/form-data"
+   public static let plainText = "text/plain"
+   public static let applicationURLForm = "application/x-www-form-urlencoded"
+   public static let applicationJSON = "application/json"
+   public static let applicationXML = "application/xml"
+   public static let multipartForm = "multipart/form-data"
   }
 
 }
