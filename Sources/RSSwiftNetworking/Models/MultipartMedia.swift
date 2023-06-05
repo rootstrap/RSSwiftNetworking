@@ -19,6 +19,8 @@ public enum MimeType: String {
   case avi = "video/avi"
   case json = "application/json"
   
+  case usd, usdz = "application/octet-stream"
+  
   func fileExtension() -> String {
     switch self {
     case .bmp: return ".bmp"
@@ -27,6 +29,8 @@ public enum MimeType: String {
     case .mpeg: return ".mpeg"
     case .avi: return ".avi"
     case .json: return ".json"
+    case .usd: return ".usd"
+    case .usdz: return ".usdz"
     default: return ".jpg"
     }
   }
