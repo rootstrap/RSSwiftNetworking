@@ -145,7 +145,7 @@ extension DataRequest: Cancellable {}
 
 fileprivate extension MultipartMedia {
   func embed(inForm multipart: MultipartFormData) {
-    multipart.append(data, withName: key, fileName: toFile, mimeType: type.rawValue)
+    multipart.append(data, withName: key, fileName: toFile, mimeType: type.contentType)
   }
 }
 

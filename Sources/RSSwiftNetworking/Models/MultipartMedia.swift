@@ -9,45 +9,73 @@
 import Foundation
 
 // Basic media MIME types, add more if needed.
-public enum MimeType: String {
-  case jpeg = "image/jpeg"
-  case bmp = "image/bmp"
-  case png = "image/png"
+public enum MimeType {
+  case jpeg
+  case bmp
+  case png
+  case mov
+  case mpeg
+  case avi
+  case json
+  case custom(contentType: String, extension: String)
   
-  case mov = "video/quicktime"
-  case mpeg = "video/mpeg"
-  case avi = "video/avi"
-  case json = "application/json"
-  
-  case usd, usdz = "application/octet-stream"
-  
-  func fileExtension() -> String {
+  public var contentType: String {
     switch self {
-    case .bmp: return ".bmp"
-    case .png: return ".png"
-    case .mov: return ".mov"
-    case .mpeg: return ".mpeg"
-    case .avi: return ".avi"
-    case .json: return ".json"
-    case .usd: return ".usd"
-    case .usdz: return ".usdz"
-    default: return ".jpg"
+    case .jpeg:
+      return "image/jpeg"
+    case .bmp:
+      return "image/bmp"
+    case .png:
+      return "image/png"
+    case .mov:
+      return "video/quicktime"
+    case .mpeg:
+      return "video/mpeg"
+    case .avi:
+      return "video/avi"
+    case .json:
+      return "application/json"
+    case .custom(let contentType, _):
+      return contentType
+    }
+  }
+  
+  public var fileExtension: String {
+    switch self {
+    case .jpeg:
+      return ".jpg"
+    case .bmp:
+      return ".bmp"
+    case .png:
+      return ".png"
+    case .mov:
+      return ".mov"
+    case .mpeg:
+      return ".mpeg"
+    case .avi:
+      return ".avi"
+    case .json:
+      return ".json"
+    case .custom( _, let fileExtension):
+      return fileExtension
     }
   }
 }
 
 public class MultipartMedia {
-  public var key: String
+  public var key: String // key name to send file
+  public var fileName: String // file name
   public var data: Data
   public var type: MimeType
 
   public var toFile: String {
-    key.validFilename + type.fileExtension()
+    fileName.validFilename + type.fileExtension
   }
   
-  public init(key: String, data: Data, type: MimeType = .jpeg) {
+  public init(fileName: String, key: String, data: Data, type: MimeType = .jpeg) {
     self.key = key
     self.data = data
     self.type = type
+    self.fileName = fileName
   }
 }
