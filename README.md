@@ -16,7 +16,7 @@
 
 ```ruby
 
-pod 'RSSwiftNetworking', '~> 1.1.6'
+pod 'RSSwiftNetworking', '~> 1.1.7'
 
 ```
 
@@ -26,7 +26,7 @@ pod 'RSSwiftNetworking', '~> 1.1.6'
 Add the following line to your `Cartfile` and follow the [installation instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application).
 
 ```
-github "rootstrap/RSSwiftNetworking" ~> 1.1.6
+github "rootstrap/RSSwiftNetworking" ~> 1.1.7
 ```
 
 #### 3. Swift Package Manager
