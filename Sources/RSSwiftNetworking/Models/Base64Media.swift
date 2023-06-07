@@ -11,8 +11,8 @@ import Foundation
 public class Base64Media: MultipartMedia {
   var base64: String
   
-  override init(key: String, data: Data, type: MimeType = .jpeg) {
+  override public init(fileName: String, key: String, data: Data, type: MimeType = .jpeg) {
     self.base64 = data.asBase64Param(withType: type)
-    super.init(key: key, data: data, type: type)
+    super.init(fileName: fileName, key: key, data: data, type: type)
   }
 }
